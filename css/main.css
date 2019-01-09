@@ -90,7 +90,7 @@ body {
  * ## links
  * ------------------------------------------------------------------- */
 a {
-    color: #0087cc;
+    color: #757575;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
@@ -502,7 +502,9 @@ form,
 }
 
 .pace .pace-progress {
-    background: #ff2b06;
+    background: #ff2b06;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     position: fixed;
     z-index: 900;
     top: 0;
@@ -545,7 +547,9 @@ form,
 }
 
 .line-scale-pulse-out > div {
-    background-color: #ff2b06;
+    background: #ff2b06;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
     width: 4px;
     height: 35px;
     border-radius: 2px;
@@ -1233,10 +1237,18 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .display-2--light {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 5.2rem;
+    line-height: 1.255;
     color: #FFFFFF;
+    margin-top: 1rem;
 }
 
 .subhead + .display-2 {
+    margin-top: .6rem;
+}
+
+.subhead--light + .display-2 {
     margin-top: .6rem;
 }
 
@@ -1248,6 +1260,16 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     letter-spacing: .25rem;
     color: #ff2b06;
     margin-top: 0;
+    margin-bottom: 0;
+}
+.subhead--light {
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 1.7rem;
+    line-height: 1.333;
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+    color: #ffffff;
+    margin-top: .6rem;
     margin-bottom: 0;
 }
 
@@ -1665,7 +1687,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .header-menu-toggle:hover, .header-menu-toggle:focus {
-    color: #000000;
+    color: #ffffff;
 }
 
 .header-menu-text {
@@ -1675,6 +1697,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     left: -70px;
     width: 70px;
     padding-left: 12px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .header-menu-icon {
@@ -1687,7 +1711,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     top: 50%;
     right: auto;
     bottom: auto;
-    background-color:#ff2b06;
+    background-color: #ff2b06;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
@@ -1890,6 +1914,160 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     bottom: 0;
 }
 
+/* ===================================================================
+ * # ysh 
+ *
+ * ------------------------------------------------------------------- */
+ .s-ysh {
+    width: 100%;
+    height: 25%;
+    min-height: 100px;
+    background-color: transparent;
+    position: relative;
+    display: table;
+}
+
+.s-ysh .shadow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000', GradientType=0);
+}
+
+.s-ysh .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    background-color: #000000;
+}
+
+.no-js .s-ysh {
+    background: #000000;
+}
+
+
+/*--------------------------------------------------------------------
+*  ## YSH Application
+* --------------------------------------------------------------------  */
+
+.ysh-content {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    padding-bottom: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.ysh-content h3 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    margin-left: 6px;
+}
+
+.ysh-content h1 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 4rem;
+    line-height: 1.333;
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.ysh-content__main {
+    padding-top: 10rem;
+    position: relative;
+}
+
+.ysh-content__buttons {
+    padding-top: 6rem;
+    text-align: left;
+}
+
+.ysh-content__buttons .btn {
+    width: 215px;
+    border-color: #000000;
+    color: #000000;
+    margin: 1.5rem 1.5rem 0 0;
+    letter-spacing: .25rem;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.ysh-content__buttons .btn:last-child {
+    margin-right: 0;
+}
+
+.ysh-content__buttons .btn:hover, 
+.ysh-content__buttons .btn:focus {
+    background: #000000 !important;
+    color: #FFFFFF;
+}
+
+.ysh-content__scroll {
+    position: absolute;
+    right: 9.5rem;
+    bottom: 8.4rem;
+}
+
+.ysh-content__scroll a {
+    font-family: "montserrat-semibold", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    color: #000000;
+    position: relative;
+    display: inline-block;
+    line-height: 3rem;
+    padding-left: 2.5rem;
+}
+
+.ysh-content__scroll a::before {
+    border-bottom: 2px solid #ff2b06;
+    border-right: 2px solid #ff2b06;
+    content: '';
+    display: block;
+    height: 8px;
+    width: 8px;
+    margin-top: -6px;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+    -ms-transform-origin: 66% 66%;
+    transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+.ysh-content__line {
+    display: block;
+    width: 2px;
+    height: 10.2rem;
+    background-color: #ff2b06;
+    position: absolute;
+    right: 7.2rem;
+    bottom: 0;
+}
 
 /* ------------------------------------------------------------------- 
  * ## home social 
@@ -2198,10 +2376,14 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-about {
+    font-family: "montserrat-light", sans-serif;
+    font-weight: 300;
     padding-top: 16.2rem;
     padding-bottom: 9rem;
-    background-color: #ff2b06;
-    color: #010507;
+    background: #ee0979;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #ffffff;
     position: relative;
 }
 
@@ -2368,16 +2550,15 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-theme {
+    font-family: 'K2D', sans-serif;
     padding-top: 16.2rem;
     padding-bottom: 13.2rem;
-    color: #757575;
+    color: #000000;
     position: relative;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#efefef+1,ffccc4+100 */
-    background: #efefef; /* Old browsers */
-    background: -moz-linear-gradient(-90deg, #efefef 1%, #ffccc4 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-90deg, #efefef 1%,#ffccc4 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #efefef 1%,#ffccc4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#ffccc4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #ee9ca7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
     .s-theme h1 sup{
         font-size: 1.4rem;
@@ -2410,7 +2591,7 @@ html.no-csstransitions .home-content__main {
 /* ------------------------------------------------------------------- 
  * ## speakers list
  * ------------------------------------------------------------------- */
-.speakers-list {
+.speakers-list { 
     margin-top: 6rem;
 }
 
@@ -2446,11 +2627,42 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-youthspeaker {
+    font-family: 'K2D', sans-serif;
     padding-bottom: 13.2rem;
-    background-color: #FFFFFF;
-    color: #333333;
+    color: #FFFFFF;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     position: relative;
 }
+
+.home-ysh__buttons {
+    padding-top: 6rem;
+    text-align: left;
+}
+
+.home-ysh__buttons .btn {
+    width: 215px;
+    background: #0F2027;  /* fallback for old browsers */
+    border-color: #ffffff; 
+    color: #ffffff;
+    border-color: none !important;
+    margin: 1.5rem 1.5rem 0 0;
+    letter-spacing: .25rem;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.home-ysh__buttons .btn:last-child {
+    margin-right: 0;
+}
+
+.home-ysh__buttons .btn:hover, 
+.home-ysh__buttons .btn:focus {
+    background: #F0F2F0 !important;
+    color: #000000;
+}
+
 
 
 /* ------------------------------------------------------------------- 
@@ -2542,7 +2754,8 @@ html.no-csstransitions .home-content__main {
 
 .s-works .intro-wrap {
     padding: 15rem 0 25.2rem;
-    background: #111111;
+    background-image: url(../images/wheel-2000.jpg);  /* fallback for old browsers */
+
 }
 
 .works-content {
@@ -2550,7 +2763,50 @@ html.no-csstransitions .home-content__main {
     margin-top: -23.4rem;
 }
 
+/* ===================================================================
+ * # ysh works
+ *
+ * ------------------------------------------------------------------- */
 
+ .s-yshworks {
+    background: #FFFFFF;
+    position: relative;
+}
+
+.s-yshworks .intro-wrap {
+    padding: 5rem 0 5rem;
+    background-image: url(../images/hero-bg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.yshworks-content {
+    max-width: 1160px;
+    margin-top: -23.4rem;
+}
+
+.s-yshworks .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    background-color: #000000;
+}
+
+
+
+/* ------------------------------------------------------------------- 
+ * ## google form
+ * ------------------------------------------------------------------- */
+
+ .googleform {
+    margin: 0 auto;
+    text-align: center;
+  }
 /* ------------------------------------------------------------------- 
  * ## bricks/masonry
  * ------------------------------------------------------------------- */
@@ -2601,12 +2857,12 @@ html.no-csstransitions .home-content__main {
 }
 
 .item-folio__thumb a::after {
-    content: "+";
-    font-family: georgia, serif;
-    font-size: 2.7rem;
-    display: block;
-    height: 30px;
-    width: 30px;
+    content: "\f04b"   ;
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 3000;
     line-height: 30px;
     margin-left: -15px;
     margin-top: -15px;
